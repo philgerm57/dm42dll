@@ -1,0 +1,59 @@
+RCLx			RCL×
+RCL*		 RCL×
+RCL/ 		RCL÷
+STOx, 		STO×
+STO*	 	STO×
+STO/	 	STO÷
+BASEx		BASE×
+BASE*	 	BASE×
+BASE/	 	BASE÷
+BASE+/-	 	BASE±
+
+R^ 		R↑
+Rv 		1R↓
+
+Sigma|SUM|GS)+", "$1Σ+
+Sigma|SUM|GS)-", "$1Σ-
+ALL\,Sigma|SUM|GS)", "$1ALLΣ
+CL\,Sigma|SUM|GS)", "$1CLΣ
+LIN\(\\|)(Sigma|SUM|GS)", "$1LINΣ
+PR\(\\|)(Sigma|SUM|GS)", "$1PRΣ
+\(Sigma|SUM|GS)REG", "$1ΣREG
+
+->HR	 	→HR
+->HMS, 		→HMS
+
+->DEC" →DEC
+->OCT" →OCT
+->RAD" →RAD
+->HMS" →HMS
+->REC" →REC
+->DEG" →DEG
+->POL" →POL
+
+X!=0? $1X≠0?
+X\\=0? "$1X≠0?
+X#Y? "$1X≠Y?
+X#0? "$1X≠0?
+X<=0? "$1X≤0?
+X>=0? "$1X≥0?
+X\!=Y? "$1X≠Y
+X<=Y? "$1X≤Y?
+X>=Y? "$1X≥Y?
+
+10\^x|X)	 	10↑X
+(x|X)\^2	 	X↑2
+Y\^(x|X) 		Y↑X
+(e|E)\^(x|X)	E↑X
+(e|E)\^(x|X)-1	E↑X-1
+
+<-\b ←
+\^\b ↑
+v\b ↓
+->\b →
+
+/, ÷
+
+|- ⊢");
+├ ⊢
+s*(e E)(.*)", "$1ᴇ$3");
