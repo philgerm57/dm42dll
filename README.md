@@ -11,6 +11,9 @@ Elle est utilisée par [DM42 Editor](https://github.com/philgerm57/DM42Editor) e
 Prérequis : [pack de développement .NET Framework 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net472),
 ou Visual Studio avec la charge de travail .NET desktop.
 
+`build.bat` compile la solution (DLL et AppTestDll) avec le MSBuild de Visual Studio, ou à défaut `dotnet build` ;
+`build.bat test` lance ensuite la validation décrite plus bas, `build.bat release` compile en Release.
+
 ```bash
 dotnet build dm42dll.csproj -c Debug
 ```
@@ -60,3 +63,19 @@ string rpn = result.getRpn("\n", true);      // listing avec numéros de ligne
 
 GNU GPLv3 pour l'ensemble. Le cœur de l'encodeur / décodeur est une traduction en C# du code TypeScript
 de J. Heilingbrunner (projet vscode-hp42s / Free42), publié sous licence MIT : voir [LICENCE.txt](LICENCE.txt).
+
+## Validation
+
+`Tests/Validation` génère une instruction d'exemple pour chaque forme de la table d'encodage
+(ST X…L, IND, registres 00-99, noms, labels locaux, drapeaux, nombres, chaînes…), soit environ 2 100 instructions.
+Chacune est encodée puis décodée, et le texte décodé doit redonner les mêmes octets.
+
+```bash
+dotnet build dm42dll.csproj -c Debug
+dotnet run --project Tests/Validation -- Tests/Validation
+```
+
+Résultats dans `Tests/Validation` :
+
+- `validation-dm42dll.txt` : bilan et détail des écarts ;
+- `VALID.free42` et `VALID.raw` : le programme complet, à charger dans Free42 ou la DM42 pour comparer avec la calculatrice.

@@ -1,0 +1,267 @@
+Instructions testées : 2096
+  identiques après décodage : 1836
+  équivalentes (autre écriture, mêmes octets) : 252
+  ÉCARTS (octets différents après décodage) : 0
+  refusées par l'encodeur : 0
+  motifs sans exemple : 0
+
+≈ ÉQUIVALENT /                                  → +/-
+≈ ÉQUIVALENT 10^X                               → 10↑X
+≈ ÉQUIVALENT <                                  → ←
+≈ ÉQUIVALENT >                                  → →
+≈ ÉQUIVALENT >DEC                               → →DEC
+≈ ÉQUIVALENT >DEG                               → →DEG
+≈ ÉQUIVALENT >HMS                               → →HMS
+≈ ÉQUIVALENT >HR                                → →HR
+≈ ÉQUIVALENT >OCT                               → →OCT
+≈ ÉQUIVALENT >POL                               → →POL
+≈ ÉQUIVALENT >RAD                               → →RAD
+≈ ÉQUIVALENT >REC                               → →REC
+✓ REFUS ATTENDU ASSIGN "ABCDEFGHIJKLMN" TO 05  name too long (13 characters max with ASSIGN / KEY)
+✓ REFUS ATTENDU ASSIGN "ABCDEFGHIJKLMN" TO 11  name too long (13 characters max with ASSIGN / KEY)
+✓ REFUS ATTENDU ASSIGN "ABCDEFGHIJKLMN" TO 16  name too long (13 characters max with ASSIGN / KEY)
+≈ ÉQUIVALENT BASE+/-                            → BASE±
+≈ ÉQUIVALENT BASE/                              → BASE÷
+≈ ÉQUIVALENT BASEx                              → BASE×
+≈ ÉQUIVALENT E^X                                → E↑X
+≈ ÉQUIVALENT E^X-1                              → E↑X-1
+✓ REFUS ATTENDU KEY 9 GTO IND "ABCDEFGHIJKLMN" name too long (13 characters max with ASSIGN / KEY)
+✓ REFUS ATTENDU KEY 9 GTO "ABCDEFGHIJKLMN"     name too long (13 characters max with ASSIGN / KEY)
+✓ REFUS ATTENDU KEY 9 XEQ IND "ABCDEFGHIJKLMN" name too long (13 characters max with ASSIGN / KEY)
+✓ REFUS ATTENDU KEY 9 XEQ "ABCDEFGHIJKLMN"     name too long (13 characters max with ASSIGN / KEY)
+≈ ÉQUIVALENT RCL/ IND ST X                      → RCL÷ IND ST X
+≈ ÉQUIVALENT RCL/ IND ST Y                      → RCL÷ IND ST Y
+≈ ÉQUIVALENT RCL/ IND ST Z                      → RCL÷ IND ST Z
+≈ ÉQUIVALENT RCL/ IND ST T                      → RCL÷ IND ST T
+≈ ÉQUIVALENT RCL/ IND ST L                      → RCL÷ IND ST L
+≈ ÉQUIVALENT RCL/ IND "ABC"                     → RCL÷ IND "ABC"
+≈ ÉQUIVALENT RCL/ IND "ABCDEFGHIJKLMN"          → RCL÷ IND "ABCDEFGHIJKLMN"
+≈ ÉQUIVALENT RCL/ IND "Σ÷×"                     → RCL÷ IND "Σ÷×"
+≈ ÉQUIVALENT RCL/ IND 00                        → RCL÷ IND 00
+≈ ÉQUIVALENT RCL/ IND 01                        → RCL÷ IND 01
+≈ ÉQUIVALENT RCL/ IND 05                        → RCL÷ IND 05
+≈ ÉQUIVALENT RCL/ IND 09                        → RCL÷ IND 09
+≈ ÉQUIVALENT RCL/ IND 10                        → RCL÷ IND 10
+≈ ÉQUIVALENT RCL/ IND 11                        → RCL÷ IND 11
+≈ ÉQUIVALENT RCL/ IND 14                        → RCL÷ IND 14
+≈ ÉQUIVALENT RCL/ IND 15                        → RCL÷ IND 15
+≈ ÉQUIVALENT RCL/ IND 16                        → RCL÷ IND 16
+≈ ÉQUIVALENT RCL/ IND 18                        → RCL÷ IND 18
+≈ ÉQUIVALENT RCL/ IND 25                        → RCL÷ IND 25
+≈ ÉQUIVALENT RCL/ IND 35                        → RCL÷ IND 35
+≈ ÉQUIVALENT RCL/ IND 81                        → RCL÷ IND 81
+≈ ÉQUIVALENT RCL/ IND 99                        → RCL÷ IND 99
+≈ ÉQUIVALENT RCL/ ST X                          → RCL÷ ST X
+≈ ÉQUIVALENT RCL/ ST Y                          → RCL÷ ST Y
+≈ ÉQUIVALENT RCL/ ST Z                          → RCL÷ ST Z
+≈ ÉQUIVALENT RCL/ ST T                          → RCL÷ ST T
+≈ ÉQUIVALENT RCL/ ST L                          → RCL÷ ST L
+≈ ÉQUIVALENT RCL/ "ABC"                         → RCL÷ "ABC"
+≈ ÉQUIVALENT RCL/ "ABCDEFGHIJKLMN"              → RCL÷ "ABCDEFGHIJKLMN"
+≈ ÉQUIVALENT RCL/ "Σ÷×"                         → RCL÷ "Σ÷×"
+≈ ÉQUIVALENT RCL/ 00                            → RCL÷ 00
+≈ ÉQUIVALENT RCL/ 01                            → RCL÷ 01
+≈ ÉQUIVALENT RCL/ 05                            → RCL÷ 05
+≈ ÉQUIVALENT RCL/ 09                            → RCL÷ 09
+≈ ÉQUIVALENT RCL/ 10                            → RCL÷ 10
+≈ ÉQUIVALENT RCL/ 11                            → RCL÷ 11
+≈ ÉQUIVALENT RCL/ 14                            → RCL÷ 14
+≈ ÉQUIVALENT RCL/ 15                            → RCL÷ 15
+≈ ÉQUIVALENT RCL/ 16                            → RCL÷ 16
+≈ ÉQUIVALENT RCL/ 18                            → RCL÷ 18
+≈ ÉQUIVALENT RCL/ 25                            → RCL÷ 25
+≈ ÉQUIVALENT RCL/ 35                            → RCL÷ 35
+≈ ÉQUIVALENT RCL/ 81                            → RCL÷ 81
+≈ ÉQUIVALENT RCL/ 99                            → RCL÷ 99
+≈ ÉQUIVALENT RCLx IND ST X                      → RCL× IND ST X
+≈ ÉQUIVALENT RCLx IND ST Y                      → RCL× IND ST Y
+≈ ÉQUIVALENT RCLx IND ST Z                      → RCL× IND ST Z
+≈ ÉQUIVALENT RCLx IND ST T                      → RCL× IND ST T
+≈ ÉQUIVALENT RCLx IND ST L                      → RCL× IND ST L
+≈ ÉQUIVALENT RCLx IND "ABC"                     → RCL× IND "ABC"
+≈ ÉQUIVALENT RCLx IND "ABCDEFGHIJKLMN"          → RCL× IND "ABCDEFGHIJKLMN"
+≈ ÉQUIVALENT RCLx IND "Σ÷×"                     → RCL× IND "Σ÷×"
+≈ ÉQUIVALENT RCLx IND 00                        → RCL× IND 00
+≈ ÉQUIVALENT RCLx IND 01                        → RCL× IND 01
+≈ ÉQUIVALENT RCLx IND 05                        → RCL× IND 05
+≈ ÉQUIVALENT RCLx IND 09                        → RCL× IND 09
+≈ ÉQUIVALENT RCLx IND 10                        → RCL× IND 10
+≈ ÉQUIVALENT RCLx IND 11                        → RCL× IND 11
+≈ ÉQUIVALENT RCLx IND 14                        → RCL× IND 14
+≈ ÉQUIVALENT RCLx IND 15                        → RCL× IND 15
+≈ ÉQUIVALENT RCLx IND 16                        → RCL× IND 16
+≈ ÉQUIVALENT RCLx IND 18                        → RCL× IND 18
+≈ ÉQUIVALENT RCLx IND 25                        → RCL× IND 25
+≈ ÉQUIVALENT RCLx IND 35                        → RCL× IND 35
+≈ ÉQUIVALENT RCLx IND 81                        → RCL× IND 81
+≈ ÉQUIVALENT RCLx IND 99                        → RCL× IND 99
+≈ ÉQUIVALENT RCLx ST X                          → RCL× ST X
+≈ ÉQUIVALENT RCLx ST Y                          → RCL× ST Y
+≈ ÉQUIVALENT RCLx ST Z                          → RCL× ST Z
+≈ ÉQUIVALENT RCLx ST T                          → RCL× ST T
+≈ ÉQUIVALENT RCLx ST L                          → RCL× ST L
+≈ ÉQUIVALENT RCLx "ABC"                         → RCL× "ABC"
+≈ ÉQUIVALENT RCLx "ABCDEFGHIJKLMN"              → RCL× "ABCDEFGHIJKLMN"
+≈ ÉQUIVALENT RCLx "Σ÷×"                         → RCL× "Σ÷×"
+≈ ÉQUIVALENT RCLx 00                            → RCL× 00
+≈ ÉQUIVALENT RCLx 01                            → RCL× 01
+≈ ÉQUIVALENT RCLx 05                            → RCL× 05
+≈ ÉQUIVALENT RCLx 09                            → RCL× 09
+≈ ÉQUIVALENT RCLx 10                            → RCL× 10
+≈ ÉQUIVALENT RCLx 11                            → RCL× 11
+≈ ÉQUIVALENT RCLx 14                            → RCL× 14
+≈ ÉQUIVALENT RCLx 15                            → RCL× 15
+≈ ÉQUIVALENT RCLx 16                            → RCL× 16
+≈ ÉQUIVALENT RCLx 18                            → RCL× 18
+≈ ÉQUIVALENT RCLx 25                            → RCL× 25
+≈ ÉQUIVALENT RCLx 35                            → RCL× 35
+≈ ÉQUIVALENT RCLx 81                            → RCL× 81
+≈ ÉQUIVALENT RCLx 99                            → RCL× 99
+≈ ÉQUIVALENT R^                                 → R↑
+≈ ÉQUIVALENT Rv                                 → R↓
+≈ ÉQUIVALENT S+                                 → Σ+
+≈ ÉQUIVALENT S-                                 → Σ-
+≈ ÉQUIVALENT SREG IND ST X                      → ΣREG IND ST X
+≈ ÉQUIVALENT SREG IND ST Y                      → ΣREG IND ST Y
+≈ ÉQUIVALENT SREG IND ST Z                      → ΣREG IND ST Z
+≈ ÉQUIVALENT SREG IND ST T                      → ΣREG IND ST T
+≈ ÉQUIVALENT SREG IND ST L                      → ΣREG IND ST L
+≈ ÉQUIVALENT SREG IND "ABC"                     → ΣREG IND "ABC"
+≈ ÉQUIVALENT SREG IND "ABCDEFGHIJKLMN"          → ΣREG IND "ABCDEFGHIJKLMN"
+≈ ÉQUIVALENT SREG IND "Σ÷×"                     → ΣREG IND "Σ÷×"
+≈ ÉQUIVALENT SREG IND 00                        → ΣREG IND 00
+≈ ÉQUIVALENT SREG IND 01                        → ΣREG IND 01
+≈ ÉQUIVALENT SREG IND 05                        → ΣREG IND 05
+≈ ÉQUIVALENT SREG IND 09                        → ΣREG IND 09
+≈ ÉQUIVALENT SREG IND 10                        → ΣREG IND 10
+≈ ÉQUIVALENT SREG IND 11                        → ΣREG IND 11
+≈ ÉQUIVALENT SREG IND 14                        → ΣREG IND 14
+≈ ÉQUIVALENT SREG IND 15                        → ΣREG IND 15
+≈ ÉQUIVALENT SREG IND 16                        → ΣREG IND 16
+≈ ÉQUIVALENT SREG IND 18                        → ΣREG IND 18
+≈ ÉQUIVALENT SREG IND 25                        → ΣREG IND 25
+≈ ÉQUIVALENT SREG IND 35                        → ΣREG IND 35
+≈ ÉQUIVALENT SREG IND 81                        → ΣREG IND 81
+≈ ÉQUIVALENT SREG IND 99                        → ΣREG IND 99
+≈ ÉQUIVALENT SREG 00                            → ΣREG 00
+≈ ÉQUIVALENT SREG 01                            → ΣREG 01
+≈ ÉQUIVALENT SREG 05                            → ΣREG 05
+≈ ÉQUIVALENT SREG 09                            → ΣREG 09
+≈ ÉQUIVALENT SREG 10                            → ΣREG 10
+≈ ÉQUIVALENT SREG 11                            → ΣREG 11
+≈ ÉQUIVALENT SREG 14                            → ΣREG 14
+≈ ÉQUIVALENT SREG 15                            → ΣREG 15
+≈ ÉQUIVALENT SREG 16                            → ΣREG 16
+≈ ÉQUIVALENT SREG 18                            → ΣREG 18
+≈ ÉQUIVALENT SREG 25                            → ΣREG 25
+≈ ÉQUIVALENT SREG 35                            → ΣREG 35
+≈ ÉQUIVALENT SREG 81                            → ΣREG 81
+≈ ÉQUIVALENT SREG 99                            → ΣREG 99
+≈ ÉQUIVALENT SREG?                              → ΣREG?
+≈ ÉQUIVALENT STO/ IND ST X                      → STO÷ IND ST X
+≈ ÉQUIVALENT STO/ IND ST Y                      → STO÷ IND ST Y
+≈ ÉQUIVALENT STO/ IND ST Z                      → STO÷ IND ST Z
+≈ ÉQUIVALENT STO/ IND ST T                      → STO÷ IND ST T
+≈ ÉQUIVALENT STO/ IND ST L                      → STO÷ IND ST L
+≈ ÉQUIVALENT STO/ IND "ABC"                     → STO÷ IND "ABC"
+≈ ÉQUIVALENT STO/ IND "ABCDEFGHIJKLMN"          → STO÷ IND "ABCDEFGHIJKLMN"
+≈ ÉQUIVALENT STO/ IND "Σ÷×"                     → STO÷ IND "Σ÷×"
+≈ ÉQUIVALENT STO/ IND 00                        → STO÷ IND 00
+≈ ÉQUIVALENT STO/ IND 01                        → STO÷ IND 01
+≈ ÉQUIVALENT STO/ IND 05                        → STO÷ IND 05
+≈ ÉQUIVALENT STO/ IND 09                        → STO÷ IND 09
+≈ ÉQUIVALENT STO/ IND 10                        → STO÷ IND 10
+≈ ÉQUIVALENT STO/ IND 11                        → STO÷ IND 11
+≈ ÉQUIVALENT STO/ IND 14                        → STO÷ IND 14
+≈ ÉQUIVALENT STO/ IND 15                        → STO÷ IND 15
+≈ ÉQUIVALENT STO/ IND 16                        → STO÷ IND 16
+≈ ÉQUIVALENT STO/ IND 18                        → STO÷ IND 18
+≈ ÉQUIVALENT STO/ IND 25                        → STO÷ IND 25
+≈ ÉQUIVALENT STO/ IND 35                        → STO÷ IND 35
+≈ ÉQUIVALENT STO/ IND 81                        → STO÷ IND 81
+≈ ÉQUIVALENT STO/ IND 99                        → STO÷ IND 99
+≈ ÉQUIVALENT STO/ ST X                          → STO÷ ST X
+≈ ÉQUIVALENT STO/ ST Y                          → STO÷ ST Y
+≈ ÉQUIVALENT STO/ ST Z                          → STO÷ ST Z
+≈ ÉQUIVALENT STO/ ST T                          → STO÷ ST T
+≈ ÉQUIVALENT STO/ ST L                          → STO÷ ST L
+≈ ÉQUIVALENT STO/ "ABC"                         → STO÷ "ABC"
+≈ ÉQUIVALENT STO/ "ABCDEFGHIJKLMN"              → STO÷ "ABCDEFGHIJKLMN"
+≈ ÉQUIVALENT STO/ "Σ÷×"                         → STO÷ "Σ÷×"
+≈ ÉQUIVALENT STO/ 00                            → STO÷ 00
+≈ ÉQUIVALENT STO/ 01                            → STO÷ 01
+≈ ÉQUIVALENT STO/ 05                            → STO÷ 05
+≈ ÉQUIVALENT STO/ 09                            → STO÷ 09
+≈ ÉQUIVALENT STO/ 10                            → STO÷ 10
+≈ ÉQUIVALENT STO/ 11                            → STO÷ 11
+≈ ÉQUIVALENT STO/ 14                            → STO÷ 14
+≈ ÉQUIVALENT STO/ 15                            → STO÷ 15
+≈ ÉQUIVALENT STO/ 16                            → STO÷ 16
+≈ ÉQUIVALENT STO/ 18                            → STO÷ 18
+≈ ÉQUIVALENT STO/ 25                            → STO÷ 25
+≈ ÉQUIVALENT STO/ 35                            → STO÷ 35
+≈ ÉQUIVALENT STO/ 81                            → STO÷ 81
+≈ ÉQUIVALENT STO/ 99                            → STO÷ 99
+≈ ÉQUIVALENT STOx IND ST X                      → STO× IND ST X
+≈ ÉQUIVALENT STOx IND ST Y                      → STO× IND ST Y
+≈ ÉQUIVALENT STOx IND ST Z                      → STO× IND ST Z
+≈ ÉQUIVALENT STOx IND ST T                      → STO× IND ST T
+≈ ÉQUIVALENT STOx IND ST L                      → STO× IND ST L
+≈ ÉQUIVALENT STOx IND "ABC"                     → STO× IND "ABC"
+≈ ÉQUIVALENT STOx IND "ABCDEFGHIJKLMN"          → STO× IND "ABCDEFGHIJKLMN"
+≈ ÉQUIVALENT STOx IND "Σ÷×"                     → STO× IND "Σ÷×"
+≈ ÉQUIVALENT STOx IND 00                        → STO× IND 00
+≈ ÉQUIVALENT STOx IND 01                        → STO× IND 01
+≈ ÉQUIVALENT STOx IND 05                        → STO× IND 05
+≈ ÉQUIVALENT STOx IND 09                        → STO× IND 09
+≈ ÉQUIVALENT STOx IND 10                        → STO× IND 10
+≈ ÉQUIVALENT STOx IND 11                        → STO× IND 11
+≈ ÉQUIVALENT STOx IND 14                        → STO× IND 14
+≈ ÉQUIVALENT STOx IND 15                        → STO× IND 15
+≈ ÉQUIVALENT STOx IND 16                        → STO× IND 16
+≈ ÉQUIVALENT STOx IND 18                        → STO× IND 18
+≈ ÉQUIVALENT STOx IND 25                        → STO× IND 25
+≈ ÉQUIVALENT STOx IND 35                        → STO× IND 35
+≈ ÉQUIVALENT STOx IND 81                        → STO× IND 81
+≈ ÉQUIVALENT STOx IND 99                        → STO× IND 99
+≈ ÉQUIVALENT STOx ST X                          → STO× ST X
+≈ ÉQUIVALENT STOx ST Y                          → STO× ST Y
+≈ ÉQUIVALENT STOx ST Z                          → STO× ST Z
+≈ ÉQUIVALENT STOx ST T                          → STO× ST T
+≈ ÉQUIVALENT STOx ST L                          → STO× ST L
+≈ ÉQUIVALENT STOx "ABC"                         → STO× "ABC"
+≈ ÉQUIVALENT STOx "ABCDEFGHIJKLMN"              → STO× "ABCDEFGHIJKLMN"
+≈ ÉQUIVALENT STOx "Σ÷×"                         → STO× "Σ÷×"
+≈ ÉQUIVALENT STOx 00                            → STO× 00
+≈ ÉQUIVALENT STOx 01                            → STO× 01
+≈ ÉQUIVALENT STOx 05                            → STO× 05
+≈ ÉQUIVALENT STOx 09                            → STO× 09
+≈ ÉQUIVALENT STOx 10                            → STO× 10
+≈ ÉQUIVALENT STOx 11                            → STO× 11
+≈ ÉQUIVALENT STOx 14                            → STO× 14
+≈ ÉQUIVALENT STOx 15                            → STO× 15
+≈ ÉQUIVALENT STOx 16                            → STO× 16
+≈ ÉQUIVALENT STOx 18                            → STO× 18
+≈ ÉQUIVALENT STOx 25                            → STO× 25
+≈ ÉQUIVALENT STOx 35                            → STO× 35
+≈ ÉQUIVALENT STOx 81                            → STO× 81
+≈ ÉQUIVALENT STOx 99                            → STO× 99
+≈ ÉQUIVALENT X!=0?                              → X≠0?
+≈ ÉQUIVALENT X!=Y?                              → X≠Y?
+≈ ÉQUIVALENT X<=0?                              → X≤0?
+≈ ÉQUIVALENT X<=Y                               → X<>Y
+≈ ÉQUIVALENT X<=Y?                              → X≤Y?
+≈ ÉQUIVALENT X<>0?                              → X≠0?
+≈ ÉQUIVALENT X>=0?                              → X≥0?
+≈ ÉQUIVALENT X>=Y?                              → X≥Y?
+≈ ÉQUIVALENT X^2                                → X↑2
+≈ ÉQUIVALENT X≶Y                                → X<>Y
+≈ ÉQUIVALENT Y^X                                → Y↑X
+≈ ÉQUIVALENT ^                                  → ↑
+≈ ÉQUIVALENT v                                  → ↓
+≈ ÉQUIVALENT x                                  → ×
+≈ ÉQUIVALENT ±                                  → +/-
+≈ ÉQUIVALENT 1E-10                              → 1ᴇ-10
+≈ ÉQUIVALENT -1.234E99                          → -1.234ᴇ99
+≈ ÉQUIVALENT 6.02E23                            → 6.02ᴇ23
+✓ REFUS ATTENDU ""                             empty string

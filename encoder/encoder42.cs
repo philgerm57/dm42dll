@@ -189,6 +189,18 @@ namespace DM42.encoder
                         rawLine.error = new CodeError(rawLine.docLine, rawLine.codeLineNo, rawLine.docCode, progErrorText);
                     }
                 }
+
+                // un paramètre non remplacé (Fn, rr, nn…) donnerait un .raw corrompu : erreur plutôt
+                if (rawLine.error == null && !string.IsNullOrEmpty(rawLine.raw)
+                    && !Regex.IsMatch(rawLine.raw.Trim(), "^[0-9A-Fa-f]{2}( [0-9A-Fa-f]{2})*$"))
+                {
+                    // Fn : longueur sur 4 bits, 15 octets au plus (ASSIGN / KEY … "nom" : 13 caractères)
+                    string lMsg = Regex.IsMatch(rawLine.docCode.Trim(), "^⊢?\"\"$") ? "empty string"
+                                : rawLine.raw.Contains("TOOLONG") ? "name too long (13 characters max with ASSIGN / KEY)"
+                                : "unvalid parameter (raw " + rawLine.raw.Trim() + ")";
+                    rawLine.error = new CodeError(rawLine.docLine, rawLine.codeLineNo, rawLine.docCode, lMsg);
+                    rawLine.raw = null;
+                }
             }
         }
 
@@ -196,7 +208,7 @@ namespace DM42.encoder
         private static string getLanguageIdFromCode(RawLine rawLine , string languageId) 
         {
             string  lLanguageIdFromCode;
-            if ( rawLine.token!="" &&  Regex.IsMatch(rawLine.token, @"(ACCEL|LOCAT|HEADING|ADATE|ATIME|ATIME24|CLK12|CLK24|DATE|DATE+|DDAYS|DMY|DOW|MDY|TIME|YMD|BSIGNED|BWRAP|BRESET|LSTO.+)"))
+            if ( rawLine.token!="" &&  Regex.IsMatch(rawLine.token, @"(ACCEL|LOCAT|HEADING|ADATE|ATIME|ATIME24|CLK12|CLK24|DATE|DATE\+|DDAYS|DMY|DOW|MDY|TIME|YMD|BSIGNED|BWRAP|BRESET|LSTO.+)"))
              
             {
               lLanguageIdFromCode = "free42";
@@ -327,6 +339,10 @@ namespace DM42.encoder
                     lRaw = Regex.Replace(lRaw, " aa(.*)", "$1 nn");
 
                     int  length_hex_after_Fn = (lRaw.Length - (pos_Fn + 2)) / 3;
+
+                    // Fn : 15 octets au plus après Fn (ASSIGN / KEY "nom" : 13 caractères) ; repéré par toRaw
+                    if (length_hex_after_Fn > 15)
+                        return "TOOLONG";
 
                     //console.log(
                     //  HP42SEncoder.convertNumberToHexString(240 + length_hex_after_Fn)
@@ -560,7 +576,7 @@ namespace DM42.encoder
         {"10^X", new List<rawpattern> {new rawpattern(@"10\^X", "57") }},
         {"10↑X", new List<rawpattern> {new rawpattern("10↑X", "57") }},
         {"ABS", new List<rawpattern> {new rawpattern("ABS", "61") }},
-        {  "ACCEL",  new List<rawpattern> {new rawpattern( "ACCE",  "A7 CF")  } },
+        {  "ACCEL",  new List<rawpattern> {new rawpattern( "ACCEL",  "A7 CF")  } },
         {  "ACOS",   new List<rawpattern> {new rawpattern( "ACOS",  "5D")  } },
         {  "ACOSH",  new List<rawpattern> {new rawpattern(  "ACOSH",  "A0 66" ) } },
         {  "ADATE",  new List<rawpattern> {new rawpattern(  "ADATE",  "A6 81" ) } },
@@ -672,7 +688,7 @@ namespace DM42.encoder
             {  "CROSS", new List<rawpattern> {new rawpattern("CROSS",  "A6 CA") } },
             {  "CUSTOM",new List<rawpattern> {new rawpattern("CUSTOM",  "A2 6F") } },
             {  "DATE",new List<rawpattern> {new rawpattern("DATE",  "A6 8C") } },
-            {  "DATE+",new List<rawpattern> {new rawpattern("DATE+",  "A6 8D") } },
+            {  "DATE+",new List<rawpattern> {new rawpattern(@"DATE\+",  "A6 8D") } },
             {  "DDAYS",new List<rawpattern> {new rawpattern("DDAYS",  "A6 8E") } },
             {  "DECM",new List<rawpattern> {new rawpattern("DECM",  "A0 E3") } },
             {  "DEG",new List<rawpattern> {new rawpattern("DEG",  "80") } },
@@ -1063,7 +1079,7 @@ namespace DM42.encoder
              {"RCL/",new List<rawpattern>
               {
                 {new rawpattern(@"RCL/ IND ST ([XYZLT])",  "F2 D4 Ft",  "stk") },
-                {new rawpattern(@"RCL/ IND ("".{1,14}"") ",  "Fn 9D",  "nam") },
+                {new rawpattern(@"RCL/ IND ("".{1,14}"")",  "Fn 9D",  "nam") },
                 {new rawpattern(@"RCL/ IND (\d{2})",  "F2 D4 8r",  "reg") },
                 {new rawpattern(@"RCL/ ST ([XYZLT])",  "F2 D4 7t",  "stk") },
                 {new rawpattern(@"RCL/ ("".{1,14}"")",  "Fn 95",  "nam" )},

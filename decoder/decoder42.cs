@@ -261,7 +261,9 @@ namespace DM42.decoder
         {
             if (rpnLine.workCode != "")
             {
-                rpnLine.workCode = rpnLine.workCode.Replace(replace, "" + rpnLine.Parames.keyno);
+                // ASSIGN … TO 01-18 sur deux chiffres (forme attendue par l'encodeur), KEY 1-9 sur un seul
+                string lKey = rpnLine.workCode.StartsWith("ASSIGN") ? $"{rpnLine.Parames.keyno:00}" : "" + rpnLine.Parames.keyno;
+                rpnLine.workCode = rpnLine.workCode.Replace(replace, lKey);
             }
         }
 
@@ -1027,7 +1029,7 @@ namespace DM42.decoder
                 new RpnPattern ( "F2 D1 7([0-4])",  3,  "RCL+ ST `stk`",  "stk" ),
                 new RpnPattern ( "F2 D1 ([89A-E][0-9A-F])",  3,  "RCL+ IND rr",  "reg-128" ),
                 new RpnPattern ( "F2 D1 F([0-4])",  3,  "RCL+ IND ST `stk`",  "stk" ),//+
-                new RpnPattern ( "F2 D1([0-7][0-9A-F])",  3,  "RCL+ rr",  "reg" ),
+                new RpnPattern ( "F2 D1 ([0-7][0-9A-F])",  3,  "RCL+ rr",  "reg" ),
                 new RpnPattern ( "F2 D2 7([0-4])",  3,  "RCL- ST `stk`",  "stk" ),
                 new RpnPattern ( "F2 D2 ([89A-E][0-9A-F])",  3,  "RCL- IND rr",  "reg-128" ),
                 new RpnPattern ( "F2 D2 F([0-4])",  3,  "RCL- IND ST `stk`",  "stk" ),
